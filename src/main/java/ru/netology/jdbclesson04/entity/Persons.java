@@ -13,6 +13,7 @@ import javax.persistence.Entity;
 @Builder
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
 public class Persons {
 
     @EmbeddedId
@@ -27,10 +28,4 @@ public class Persons {
     @Column(nullable = false, length = 225)
     private String city_of_living;
 
-    public Persons(Fio fio, Integer age, String phone_number, String city_of_living) {
-        this.fio = fio;
-        this.age = age;
-        this.phone_number = phone_number;
-        this.city_of_living = city_of_living;
-    }
 }

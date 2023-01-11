@@ -43,15 +43,6 @@ public class Repo {
 
     @Transactional
     public void addPersons(Persons persons) {
-//        var persons = Persons.builder()
-//                .fio(Fio.builder()
-//                        .name(name)
-//                        .surname(surname)
-//                        .build())
-//                .age(age)
-//                .city_of_living(city)
-//                .phone_number(phoneNumber)
-//                .build();
         entityManager.persist(persons);
     }
 }

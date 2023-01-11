@@ -15,6 +15,7 @@ import java.util.Objects;
 @Data
 @Builder
 @NoArgsConstructor
+@AllArgsConstructor
 
 public class Fio implements Serializable {
 
@@ -26,11 +27,6 @@ public class Fio implements Serializable {
     @Column(nullable = false, length = 100)
     private String surname;
 
-    public Fio(String name, String surname){
-        this.name = name;
-        this.surname = surname;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -39,6 +35,7 @@ public class Fio implements Serializable {
         return name == that.name &&
                 surname == that.surname;
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, surname);
