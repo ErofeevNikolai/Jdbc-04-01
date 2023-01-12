@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Nikolay Erofeev
+      changes:
+        - createTable:
+            tableName: CUSTOMERS
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(250)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: surname
+                  type: varchar(250)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: age
+                  type: int
+                  constraints:
+                    checkConstraint: 10 <age <100
+              - column:
+                  name: phone_number
+                  type: varchar(13)
+                  constraints:
+                    checkConstraint: 10 <age

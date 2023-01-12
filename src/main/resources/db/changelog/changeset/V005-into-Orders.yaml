@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+        id: 5
+        author: Nikolay Erofeev
+        changes:
+          - insert:
+              tableName: Orders
+              columns:
+                - column:
+                    name: customer_id
+                    value: "1"
+                - column:
+                    name: product_name
+                    value: "Cалат"
+                - column:
+                    name: amount
+                    value: "100.00"
