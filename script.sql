@@ -1,8 +1,14 @@
-insert into hibernate.Persons  (name, surname, age, city_of_living, phone_number)
-values ('Aleksey', 'Alekseev','20','Moscow','+79991234567');
+insert into CUSTOMERS (name, surname, age, phone_number)
+values ('Алексей', 'Сидоров', 22, '+79123456789');
 
-insert into hibernate.Persons  (name, surname, age, city_of_living, phone_number)
-values ('Petr', 'Ptrov','30','Moscow','+79991234567');
+insert into CUSTOMERS (name, surname, age, phone_number)
+values ('Петр', 'Сидоров', 22, '+79123456789');
 
-insert into hibernate.Persons  (name, surname, age, city_of_living, phone_number)
-values ('Ivan', 'Ivanov','20','Kazan','+79991234567');
+insert into orders (amount, date, product_name, customer_id)
+values (100.00, now(), 'Батон','1');
+
+insert into orders (amount, date, product_name, customer_id)
+values (100.00, now(), 'Кефир','2');
+
+insert into orders (amount, date, product_name, customer_id)
+values (100.00, now(), 'яйца','1');

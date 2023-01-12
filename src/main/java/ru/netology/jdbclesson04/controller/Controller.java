@@ -12,14 +12,8 @@ import ru.netology.jdbclesson04.repository.Repo;
 public class Controller {
     Repo repo;
 
-    @GetMapping("/persons/by-city")
-    private ResponseEntity<String> get(@RequestParam("city") String city) {
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
-
-    @PutMapping("/persons")
-    private ResponseEntity putt(@RequestBody Customers presons){
-        repo.addPersons(presons);
-        return new ResponseEntity<>(HttpStatus.OK);
+    @GetMapping("/products/fetch-product")
+    private ResponseEntity<String> get(@RequestParam("name") String name) {
+        return new ResponseEntity<>(repo.getProductName(name),HttpStatus.OK);
     }
 }

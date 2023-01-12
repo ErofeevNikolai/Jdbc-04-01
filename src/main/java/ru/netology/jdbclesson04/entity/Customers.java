@@ -1,14 +1,10 @@
 package ru.netology.jdbclesson04.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
 
-
+@Data
 @Entity
 public class Customers {
 
@@ -28,5 +24,4 @@ public class Customers {
 
     @Column(nullable = false, length = 225)
     private String phone_number;
-
 }

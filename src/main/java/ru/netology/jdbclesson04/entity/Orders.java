@@ -1,29 +1,33 @@
 package ru.netology.jdbclesson04.entity;
 
 
-import javax.persistence.*;
-import javax.persistence.criteria.CriteriaBuilder;
-import java.util.Date;
+import lombok.Data;
 
+import javax.persistence.*;
+import java.math.BigDecimal;
+import java.sql.Timestamp;
+
+@Data
 @Entity
 public class Orders {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
 
-    @Column(nullable = false, length = 100)
-    private Date data;
+    @Column(name = "date")
+    private Timestamp data;
+
 
     @ManyToOne
-    @Column(nullable = false)
+    @JoinColumn(name = "customer_id")
     private Customers customer_id;
 
     @Column(nullable = false)
     private String product_name;
 
     @Column(nullable = false)
-    private String amount;
+    private BigDecimal amount;
 
 }
